@@ -174,3 +174,20 @@ std::string base64::base64_decode_f(std::string input, std::string out_file_name
     
     return out_file_name;    
 };
+
+int main(){
+
+
+    std::string r = base64::base64_encode("Admin.Manager:gozephyr2019!!");
+    std::cout << base64::base64_decode(r) << std::endl;
+
+    std::string x = base64::base64_encode_f("/home/erik/Desktop/erik.jpeg", 3);
+    try{
+        std::cout << base64::base64_decode_f(x, "/home/erik/Desktop/untouchable/testin.jpeg") << std::endl;
+    }
+    catch(std::exception e){
+        std::cout << "here" << std::endl;
+    }
+    
+  // std::cout << x.substr(2,16); /home/erik/Desktop/erik.jpeg
+}
