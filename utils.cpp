@@ -62,7 +62,7 @@ int utils::size_of_file(std::ifstream& file) {
     catch (std::ifstream::failure error){
         
         std::cerr << "\nError while getting file size" << std::endl;
-        std::abort();
+        throw std::ifstream::badbit;
     }
     
 }
