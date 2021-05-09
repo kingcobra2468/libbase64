@@ -22,6 +22,6 @@ TEST_CASE("Base64 string decode: 1", "[decode]")
 
 TEST_CASE("Base64 string decode: 2", "[decode]")
 {
-    REQUIRE_THAT(base64::base64_decode("VGhpcyBpcyBhIHNlbnRlbmNlLiBTcGVjaWFsIGNoYXJzICFAIyQlXiYqKCk="),
-                 Catch::Matchers::Equals("This is a sentence. Special chars !@#$%^&*()"));
+    REQUIRE_THAT(base64::base64_decode("dGVzdA=="),
+                 Catch::Matchers::Equals("test"));
 }
