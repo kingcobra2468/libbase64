@@ -12,21 +12,25 @@ Simple implementation of an encoder/decoder for the Base64 standard. Works on bo
 import the library as <base64.hpp>.
 
 ### Convert String to Base64 String
+
 ```cpp
 std::string base64_encoded_string = base64::base64_encode("testString");
 ```
 
 ### Convert a File's contents to Base64 String
+
 ```cpp
 std::string base64_encoded_string = base64::base64_encode_f("/path/to/file.*");
 ```
 
 ### Decode Base64 String
+
 ```cpp
 std::string a_string = base64::base64_decode("dGVzdFN0cmluZw==");
 ```
 
 ### Decode Base64 and Dump into File
+
 ```cpp
 std::string file_path = base64::base64_decode_f("dGVzdFN0cmluZw==", "/path/to/file.*");
 ```
