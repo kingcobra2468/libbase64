@@ -58,7 +58,6 @@ std::string base64::base64_encode_f(std::string in_file, int buf_len = -1)
 
         for (int chunk_pos = 0; chunk_pos < file_size; chunk_pos += 3)
         {
-
             int chunk_len = (chunk_pos + 3 < file_size ? 3 : file_size - chunk_pos);
             unsigned char *sub_buf = (unsigned char *)utils::sub_chunk(buffer, chunk_pos, chunk_len);
             int bin = utils::to_bin(sub_buf, chunk_len, 8, 3, utils::Charsets::BINARY);
@@ -82,7 +81,6 @@ std::string base64::base64_encode_f(std::string in_file, int buf_len = -1)
 
             for (int sub_chunk_pos = 0; sub_chunk_pos < cur_buf_len; sub_chunk_pos += 3)
             {
-
                 int chunk_len = (sub_chunk_pos + 3 < cur_buf_len ? 3 : cur_buf_len - sub_chunk_pos);
                 unsigned char *sub_buf = (unsigned char *)utils::sub_chunk(buffer, sub_chunk_pos, chunk_len);
                 int bin = utils::to_bin(sub_buf, chunk_len, 8, 3, utils::Charsets::BINARY);
@@ -107,14 +105,12 @@ std::string base64::base64_decode(std::string input)
 
     for (unsigned i = 0; i < input.size(); i += 4)
     {
-
         std::string sub_string = input.substr(i, 4);
         int padCount = std::count_if(sub_string.begin(), sub_string.end(), [](char x) { return (x == '=') ? true : false; });
         int chunk = utils::to_bin<std::string>(sub_string, sub_string.size(), 6, 4, utils::Charsets::BASE_64);
 
         switch (padCount)
         {
-
         case 0:
             ascii_string.push_back((chunk >> 16) & 0xFF);
             ascii_string.push_back((chunk >> 8) & 0xFF);
@@ -153,7 +149,6 @@ std::string base64::base64_decode_f(std::string input, std::string out_file_name
 
     for (unsigned i = 0; i < input.size(); i += 4)
     {
-
         std::string sub_string = input.substr(i, 4);
         int padCount = std::count_if(sub_string.begin(), sub_string.end(), [](char x) { return (x == '=') ? true : false; });
 
@@ -161,7 +156,6 @@ std::string base64::base64_decode_f(std::string input, std::string out_file_name
 
         switch (padCount)
         {
-
         case 0:
             output_file.put((chunk >> 16) & 0xFF);
             output_file.put((chunk >> 8) & 0xFF);

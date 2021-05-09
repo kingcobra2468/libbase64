@@ -7,6 +7,8 @@
 
 class utils
 {
+private:
+    static const std::string base64_charset;
 
 public:
     enum class Charsets
@@ -30,16 +32,13 @@ public:
 
         for (int i = 0; i < len; i++)
         {
-
             if (i == 0)
             {
-
                 chrpos = chr_to_index((int)(unsigned char)input[i], charset);
                 bin = chrpos << (bit_rate * ((chunk_size - i) - 1));
             }
             else
             {
-
                 chrpos = chr_to_index((int)(unsigned char)input[i], charset);
                 if (chrpos == -1)
                     break;
