@@ -31,11 +31,11 @@ namespace base64
     }
 
     /** 
- * @brief  encodes file's contents to base64
- * @param  in_file path to file: 
- * @param  buf_len (optional) buffer size when reading file 
- * @retval base64 encoded string 
- **/
+    * @brief  encodes file's contents to base64
+    * @param  in_file path to file: 
+    * @param  buf_len (optional) buffer size when reading file 
+    * @retval base64 encoded string 
+    **/
     std::string base64_encode_f(std::string in_file, int buf_len = -1)
     {
 
@@ -96,10 +96,10 @@ namespace base64
     }
 
     /** 
- * @brief  decodes base64 string
- * @param  input base64 encoded string 
- * @retval decoded base64 string 
- **/
+    * @brief  decodes base64 string
+    * @param  input base64 encoded string 
+    * @retval decoded base64 string 
+    **/
     std::string base64_decode(std::string input)
     {
 
@@ -132,11 +132,11 @@ namespace base64
     };
 
     /** 
- * @brief  decodes base64 string into a file.
- * @param  input base64 encoded string.
- * @param  out_file_name path to file where base64 string will be decoded to.
- * @retval path to file 
- **/
+    * @brief  decodes base64 string into a file.
+    * @param  input base64 encoded string.
+    * @param  out_file_name path to file where base64 string will be decoded to.
+    * @retval path to file 
+    **/
     std::string base64_decode_f(std::string input, std::string out_file_name)
     {
 
