@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
+#include <base64/base64.hpp>
 #include <catch.hpp>
-#include <base64.hpp>
 #include <string>
 
 TEST_CASE("Base64 string encode: 1", "[encode]")

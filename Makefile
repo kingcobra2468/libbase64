@@ -1,17 +1,18 @@
 BUILD_DIR   = bin/
 CC          = g++
-CFLAGS      = -Wall -Werror -Ibase64/src -Ibase64/include -o2
+CFLAGS      = -Wall -Werror -Iinclude -o2
 SO_CFLAGS   = -fPIC
-TEST_CFLAGS = -static -Lbin/ -lbase64 -Ilibs/
+TEST_CFLAGS = -static -Lbin/ -lbase64 -Ilib/
 LDFLAGS     = -shared
 LIB         = libbase64
 TEST_LIB    = $(LIB)_tests
 STATIC      = $(BUILD_DIR)$(LIB).a
 SHARED_LIB  = $(BUILD_DIR)$(LIB).so
-SRC         = $(wildcard base64/src/*.cpp)
-TEST_SRC    = $(wildcard tests/*.cpp)
+SRC         = $(wildcard src/*.cpp)
+TEST_SRC    = $(wildcard test/*.cpp)
 OBJ         = $(SRC:.cpp=.o)
 
+.PHONY: all
 all: $(STATIC) $(SHARED_LIB)
 
 $(SHARED_LIB): $(OBJ)
