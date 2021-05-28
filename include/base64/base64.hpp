@@ -6,7 +6,7 @@
 #include <algorithm>
 #include <cstring>
 #include <fstream>
-#include "utils.hpp"
+#include <base64/utils.hpp>
 
 namespace base64
 {
