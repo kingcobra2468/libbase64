@@ -1,4 +1,4 @@
-#include "base64.hpp"
+#include <base64/base64.hpp>
 
 /** 
  * @brief  encodes string to base64
@@ -108,7 +108,8 @@ namespace base64
         for (unsigned i = 0; i < input.size(); i += 4)
         {
             std::string sub_string = input.substr(i, 4);
-            int padCount = std::count_if(sub_string.begin(), sub_string.end(), [](char x) { return (x == '=') ? true : false; });
+            int padCount = std::count_if(sub_string.begin(), sub_string.end(),
+                [](char x) { return (x == '=') ? true : false; });
             int chunk = utils::to_bin<std::string>(sub_string, sub_string.size(), 6, 4, utils::Charsets::BASE_64);
 
             switch (padCount)
@@ -152,7 +153,8 @@ namespace base64
         for (unsigned i = 0; i < input.size(); i += 4)
         {
             std::string sub_string = input.substr(i, 4);
-            int padCount = std::count_if(sub_string.begin(), sub_string.end(), [](char x) { return (x == '=') ? true : false; });
+            int padCount = std::count_if(sub_string.begin(), sub_string.end(),
+                [](char x) { return (x == '=') ? true : false; });
 
             int chunk = utils::to_bin<std::string>(sub_string, sub_string.size(), 6, 4, utils::Charsets::BASE_64);
 
